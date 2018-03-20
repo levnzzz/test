@@ -1,0 +1,32 @@
+//¶þ²æËÑË÷Ê÷ BST ²åÈë²Ù×÷
+
+Position Find(EelementType X,BinTree BST);
+typedef () EelementType;
+typedef struct BNode{
+    EelementType Data;
+    struct* BinTree FirstChild;
+    struct* BinTree NextSibling;
+}BNode,*BinSearchTree;
+
+
+BinSearchTree Insert(EelementType X,BinSearchTree BST)//µÝ¹éÊµÏÖ
+{
+    if(!BST)
+    {
+        BinSearchTree P;
+        p=(BinSearchTree)malloc(sizeof(BNode));
+        p->Data=X;
+        P->FirstChild=p->NextSibling=NULL;
+        return P;
+    }
+    else
+    {
+        if(X>BST->Data)
+            return BST->NextSibling=Insert(X,BST->NextSibling);
+        else if(X<BST->Data)
+            return BST->FirstChild=Insert(X,BST->FirstChild);
+    }
+}
+
+
+

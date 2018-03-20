@@ -1,0 +1,30 @@
+typedef () Eelement;
+typedef struct TNode{
+    Eelement Data;
+    struct TNode *FirstChild;
+    struct TNode *NextSibling;
+}TNode,*BinTree;
+
+void LevelTraversal(BinTree BT)
+{
+
+    if(BT)
+        printf("ERROR");
+    else
+    {
+        BinTree B;
+        Queue s=Creat(Maxsize);
+        push(s,BT)
+        do
+        {
+            B=pop(s);
+            printf("%d",B->Data);
+            push(s,BT->FirstChild);
+            push(s,BT->NextSibling);
+
+        }
+        whlie(IsEmpty(s))
+    }
+}
+
+

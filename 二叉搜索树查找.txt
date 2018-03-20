@@ -1,0 +1,38 @@
+//二叉搜索树 BST 查找操作
+
+Position Find(EelementType X,BinTree BST);
+typedef () EelementType;
+typedef struct BNode{
+    EelementType Data;
+    struct* BinTree FirstChild;
+    struct* BinTree NextSibling;
+}BNode,*BinSearchTree;
+
+
+BinSearchTree Find(EelementType X,BinTree BST)//尾递归
+
+{
+    if(!BST) return NULL;
+    if(BST->Data==X)
+        return BST;
+    else if(X<BST->Data)
+    {
+        return Find(X,BST->FirstChild);
+    }
+    else
+    {
+        return Find(X,BST->NextSibling);
+    }
+}
+
+BinSearchTree FindMax(BinTree BST)//查找最大值
+{
+    if(!BST) return NULL;
+    if(BST->NextSibling==NULL)
+        return BST;
+    else
+        return FindMax(BST->NextSibling);
+}
+
+
+

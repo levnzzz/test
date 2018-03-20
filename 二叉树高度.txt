@@ -1,0 +1,25 @@
+//求二叉树高度
+//
+typedef () Eelement;
+typedef struct TNode{
+    Eelement Data;
+    struct TNode *FirstChild;
+    struct TNode *NextSibling;
+}TNode,*BinTree;
+
+int Heighte(BinTree BT)
+{
+    int FirstChildH,NextSibling;
+    if(BT){
+    FirstChildH=Heighte(BinTree BT->FirstChild)+1;
+    NextSiblingH=Heighte(BinTree BT->NextSibling)+1;
+    if(FirstChildH>=NextSiblingH)
+        return FirstChildH;
+    else
+        return NextSibling;
+    }
+    else
+        return 0;
+}
+
+

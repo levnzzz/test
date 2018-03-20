@@ -1,0 +1,39 @@
+//¶þ²æËÑË÷Ê÷ BST É¾³ý²Ù×÷
+
+BinSearchTree FindMax(BinTree BST);
+typedef () EelementType;
+typedef struct BNode{
+    EelementType Data;
+    struct* BinTree FirstChild;
+    struct* BinTree NextSibling;
+}BNode,*BinSearchTree;
+
+
+BinSearchTree Delete(EelementType X,BinSearchTree BST)//µÝ¹éÊµÏÖ
+{
+    BinSearchTree  P;
+    if(BST->Data==X)
+    {
+        if(BST->FirstChild&&BST->NextSibling)
+        {
+            P=FindMin(BST->NextSibling);
+            BST->Data=p->Data;
+            BST->NextSibling=Delete(p->Data,BST->NextSibling);
+        }
+        else
+        {
+            P=BST;
+            if(BST->FirstChild) BST=BST->FirstChild;
+            else if(BST->NextSibling) BST=BST->NextSibling;
+            free (p);
+        }
+    }
+    else if(BST->Data>X)
+        BST->FirstChild=Delete(X,BST->FirstChild);
+    else if(BST->Data>X)
+        BST->NextSibling=Delete(X,BST->NextSibling);
+    return BST;
+}
+
+
+
